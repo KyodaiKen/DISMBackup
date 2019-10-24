@@ -1,7 +1,7 @@
 **[English](README.md)**
 
 # Einführung in DISMBackup
-Dies ist ein Werkzeug zur Erstellung von Backups unter Verwendung von (fast) ausslchließlich Werkzeugen, die von Windows bereit gestellt werden. Es wurde mittels der Batchscript-Sprache von Windows geschrieben, damit es auch in einer PE-Umgebung (zum Beispiel Windows Setup) funktioniert.
+Dies ist ein Werkzeug zur Erstellung von Backups unter Verwendung von (fast) ausschließlich Werkzeugen, die von Windows bereit gestellt werden. Es wurde mittels der Batchscript-Sprache von Windows geschrieben, damit es auch in einer PE-Umgebung (zum Beispiel Windows Setup) funktioniert.
 
 # Inhaltsverzeichnis
 * [Installation](##Installation)

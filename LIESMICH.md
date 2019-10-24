@@ -6,10 +6,10 @@ Dies ist ein Werkzeug zur Erstellung von Backups unter Verwendung von (fast) aus
 # Inhaltsverzeichnis
 * [Installation](##Installation)
 * [Verwendung](##Verwendung)
-    * [Das aktuell ausgeführte Windows-System sichern](##Das%20aktuell%20ausgeführte%20Windows-System%20sichern)
-    * [Backup einer einfachen Partition oder eines Verzeichnisses](##Backup%20einer%20einfachen%20Partition%20oder%20eines%20Verzeichnisses)
-    * [Eine komplette Windows-Sicherheitskopie wiederherstellen und wieder bootfähig machen](##Eine%20komplette%20Windows-Sicherheitskopie%20wiederherstellen%20und%20wieder%20bootf%C3%A4hig%20machen)
-    * [Wiederherstellung einfacher Datensicherungen](##Wiederherstellung%20einfacher%20Datensicherungen)
+    * [Das aktuell ausgeführte Windows-System sichern](<##Das%20aktuell%20ausgeführte%20Windows-System%20sichern>)
+    * [Backup einer einfachen Partition oder eines Verzeichnisses](<##Backup%20einer%20einfachen%20Partition%20oder%20eines%20Verzeichnisses>)
+    * [Eine komplette Windows-Sicherheitskopie wiederherstellen und wieder bootfähig machen](<##Eine%20komplette%20Windows-Sicherheitskopie%20wiederherstellen%20und%20wieder%20bootf%C3%A4hig%20machen>)
+    * [Wiederherstellung einfacher Datensicherungen](<##Wiederherstellung%20einfacher%20Datensicherungen>)
 
 # Installation
 1. Man wählt sich ein beliebiges Installationsverzeichnis aus und kopiert die drei Scriptdateien in dieses.

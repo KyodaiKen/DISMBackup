@@ -6,9 +6,9 @@ This is a tool for creating backups using (almost) only Windows 7 or Windows 10 
 # Table of contents
 * [Installation](#Installation)
 * [Usage](#Usage)
-    * [Backing up your currently running Windows image](<##Backing up your currently running Windows image>)
-    * [Backup a simple partition or directory](<##Backup a simple partition or directory>)
-    * [Restore complete Windows drive and make it boot](<##Restore complete Windows drive and make it boot>)
+    * [Backing up your currently running Windows image](<#Backing up your currently running Windows image>)
+    * [Backup a simple partition or directory](<#Backup a simple partition or directory>)
+    * [Restore complete Windows drive and make it boot](<#Restore complete Windows drive and make it boot>)
     * [Restore simple data](<##Restore simple data>)
 
 # Installation

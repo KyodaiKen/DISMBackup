@@ -30,7 +30,7 @@ backup <Laufwerksbuchstabe zum Sichern>: <Zielpfad>
 ```
 backup c: B:\Backup\MyBackup
 ```
-Dies erstell ein Sicherungsabbild mit einem eindeutigen Dateinamen, welcher aus dem aktuellen Datum und der Uhrzeit ohne Trennzeichen gebildet wird. Die Dateiendung lautet .WIM und diese Dateien können auch mit dem Datei-Archivierer [7-zip](ttps://www.7-zip.org/) wie ein ZIP-Archiv geöffnet werden.
+Dies erstell ein Sicherungsabbild mit einem eindeutigen Dateinamen, welcher aus dem aktuellen Datum und der Uhrzeit ohne Trennzeichen gebildet wird. Die Dateiendung lautet .WIM und diese Dateien können auch mit dem Datei-Archivierer [7-zip](https://www.7-zip.org/) wie ein ZIP-Archiv geöffnet werden.
 
 ## Backup einer einfachen Partition oder eines Verzeichnisses
 Wie oben brauchen wir auch hier eine Eingabeaufforderung mit Administrator-Rechten.

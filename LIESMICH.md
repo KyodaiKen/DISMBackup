@@ -3,6 +3,8 @@
 # Einführung in DISMBackup
 Dies ist ein Werkzeug zur Erstellung von Backups unter Verwendung von (fast) ausschließlich Werkzeugen, die von Windows bereit gestellt werden. Es wurde mittels der Batchscript-Sprache von Windows geschrieben, damit es auch in einer PE-Umgebung (zum Beispiel Windows Setup) funktioniert.
 
+Diese Skriptsammung funktioniert ab Windows Vista bis zur neusten Windows 10 Version!
+
 # Inhaltsverzeichnis
 * [Installation](#Installation)
 * [Verwendung](#Verwendung)

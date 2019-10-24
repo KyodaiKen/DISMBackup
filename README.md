@@ -1,7 +1,9 @@
 **[Deutsch](LIESMICH.md)**
 
 # Introduction to DISMBackup
-This is a tool for creating backups using (almost) only Windows 7 or Windows 10 board tools. It makes it easier to create and restore backups with simple commands. It is written in the regular Windows batch script language, which makes it possible to also use those in the Windows PE (pre environment) such as the Windows Setup or Windows boot media.
+This is a tool for creating backups using (almost) only Windows board tools. It makes it easier to create and restore backups with simple commands. It is written in the regular Windows batch script language, which makes it possible to also use those in the Windows PE (pre environment) such as the Windows Setup or Windows boot media.
+
+This script collection works from Windows Vista until the latest Windows 10 version.
 
 # Table of contents
 * [Installation](#Installation)

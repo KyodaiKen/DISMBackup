@@ -6,10 +6,10 @@ This is a tool for creating backups using (almost) only Windows 7 or Windows 10 
 # Table of contents
 * [Installation](#Installation)
 * [Usage](#Usage)
-    * [Backing up your currently running Windows image](<#Backing up your currently running Windows image>)
-    * [Backup a simple partition or directory](<#Backup a simple partition or directory>)
-    * [Restore complete Windows drive and make it boot](<#Restore complete Windows drive and make it boot>)
-    * [Restore simple data](<##Restore simple data>)
+    * [Backing up your currently running Windows image](#backing-up-your-currently-running-windows-image)
+    * [Backup a simple partition or directory](#backup-a-simple-partition-or-directory)
+    * [Restore complete Windows drive and make it boot](#restore-complete-windows-drive-and-make-it-boot)
+    * [Restore simple data](#restore-simple-data)
 
 # Installation
 1. You choose any directory on your PC or boot media and place the scripts there. Then you go ahead and download [Microsoft Windows Volume Shadow Copy Service SDK](https://www.microsoft.com/en-us/download/details.aspx?id=23490). It is not that big, don't worry.

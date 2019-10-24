@@ -5,6 +5,8 @@ This is a tool for creating backups using (almost) only Windows board tools. It 
 
 This script collection works from Windows Vista until the latest Windows 10 version.
 
+The file format of the images is Microsoft's WIM-Format, which can be opened using the file archiver [7-zip](https://www.7-zip.org/).
+
 # Table of contents
 * [Installation](#Installation)
 * [Usage](#Usage)
@@ -31,7 +33,7 @@ backup <driveletter to backup>: <destination path>
 ```
 backup c: B:\Backup\MyBackup
 ```
-This will create a backup with a unique file name in it. The file name is composited by the current date and time without spaces and extra characters. The backup file is a .WIM file which can be opened using the file archiver [7-zip](ttps://www.7-zip.org/)
+This will create a backup with a unique file name in it. The file name is composited by the current date and time without spaces and extra characters. The backup file is a .WIM file which can be opened using the file archiver [7-zip](https://www.7-zip.org/)
 ## Backup a simple partition or directory
 To create a backup, just enter this in an administrator privileged console:
 ```

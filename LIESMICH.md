@@ -5,6 +5,8 @@ Dies ist ein Werkzeug zur Erstellung von Backups unter Verwendung von (fast) aus
 
 Diese Skriptsammung funktioniert ab Windows Vista bis zur neusten Windows 10 Version!
 
+Die Abbilder werden in Microsoft's eigenen WIM-Format abgespeichert. Sie sind komprimiert und können mit dem Datei-Archivierer [7-zip](https://www.7-zip.org/) wie ein ZIP-Archiv geöffnet werden.
+
 # Inhaltsverzeichnis
 * [Installation](#Installation)
 * [Verwendung](#Verwendung)

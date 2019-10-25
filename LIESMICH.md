@@ -47,34 +47,33 @@ backup-ns <Pfad oder Laufwerk zum Sichern> <Zielpfad>
 backup-ns d:\git B:\Backup\git
 ```
 ## Eine komplette Windows-Sicherheitskopie wiederherstellen und wieder bootfähig machen
----
-**WICHTIG: Disklaimer - Diese Prozedur kann wichtige Daten zerstören, wenn nicht korrekt angewendet. Für etwaige Folgen übernehme ich keinerlei Haftung. Wer dieser Anleitung folgt, tut dies auf eigene Verantwortung!**
----
+
+**WICHTIG: Haftungsausschluss! - Diese Prozedur kann wichtige Daten zerstören, wenn nicht korrekt angewendet. Für etwaige Folgen übernehme ich keinerlei Haftung. Wer dieser Anleitung folgt, tut dies auf eigene Verantwortung!**
+
 Zuerst startet man von einem Bootmedium auf dem Windows läuft oder von dem originalen Windows-Installationsmedium, bei dem man eine Administrator-Eingabeaufforderung mit UMSCHALT+F10 öffnen kann.
 
 1. Die Zielpartition mit folgendem Befehl formatieren:
-```
-format <Laufwerksbuchstabe> /FS:NTFS /q /Y
-```
----
-**/!\ ACHTUNG - DIES LÖSCHT ALLE DATEN VON DER PARTITION! /!\\**
----
+    ```
+    format <Laufwerksbuchstabe> /FS:NTFS /q /Y
+    ```
+    **/!\ ACHTUNG - DIES LÖSCHT ALLE DATEN VON DER PARTITION! /!\\**
+
 2. Mit folgendem Befehl wird die Wiederherstellung gestartet:
-```
-restore_backup <Pfad mit Dateiname des Sicherungsabbildes> <Ziel-Laufwerksbuchstabe>:
-```
-**Beispiel:**
-```
-restore_backup B:\Backups\MyBackup\1234567890.WIM E:\
-```
+    ```
+    restore_backup <Pfad mit Dateiname des Sicherungsabbildes> <Ziel-Laufwerksbuchstabe>:
+    ```
+    **Beispiel:**
+    ```
+    restore_backup B:\Backups\MyBackup\1234567890.WIM E:\
+    ```
 3. Nachdem der Vorgang beendet wurde muss man noch die Startumgebung von Windows wieder aufbauen. Dies geschieht mit folgendem Befehl:
-```
-<Laufwerksbuchstabe>\windows\system32\bcdboot <Laufwerksbuchstabe>\windows /l <Sprachschlüssel wie zum Beispiel en-US or de-DE>
-```
-Beispiel:
-```
-E:\windows\system32\bcdboot E:\windows /l de-DE
-```
+    ```
+    <Laufwerksbuchstabe>\windows\system32\bcdboot <Laufwerksbuchstabe>\windows /l <Sprachschlüssel wie zum Beispiel en-US or de-DE>
+    ```
+    Beispiel:
+    ```
+    E:\windows\system32\bcdboot E:\windows /l de-DE
+    ```
 ## Wiederherstellung einfacher Datensicherungen
 Wie vorhin bei der Erstellung eines Backups brauchen wir auch hier eine Eingabeaufforderung mit Administrator-Rechten und führt folgenden Befehl darin aus:
 ```

@@ -50,28 +50,27 @@ backup-ns d:\git B:\Backup\git
 First you need to be booted up in an environment where you are able to format and repopulate the drive where you want to restore your Windows. This could be the Windows Setup (SHIFT+F10 opens the admin console) or another Windows that is booted up.
 
 1. Format the destination partition using the format statement:
-```
-format <driveletter> /FS:NTFS /q /Y
-```
----
-**/!\ WARNING - THIS DELETES ALL DATA ON THAT PARTITION OF THE DRIVE /!\\**
----
+    ```
+    format <driveletter> /FS:NTFS /q /Y
+    ```
+    **/!\ WARNING - THIS DELETES ALL DATA ON THAT PARTITION OF THE DRIVE /!\\**
+
 2. Run the restore_data script with the following syntax:
-```
-restore_backup <image file path and name> <drive letter>:
-```
-**Example:**
-```
-restore_backup B:\Backups\MyBackup\1234567890.WIM E:\
-```
+    ```
+    restore_backup <image file path and name> <drive letter>:
+    ```
+    **Example:**
+    ```
+    restore_backup B:\Backups\MyBackup\1234567890.WIM E:\
+    ```
 3. After the restore has finished, you need to rebuild the boot environment of Windows like this:
-```
-<driveletter>\windows\system32\bcdboot <driveletter>\windows /l <language code like en-US or de-DE>
-```
+    ```
+    <driveletter>\windows\system32\bcdboot <driveletter>\windows /l <language code like en-US or de-DE>
+    ```
 Example:
-```
-E:\windows\system32\bcdboot E:\windows /l de-DE
-```
+    ```
+    E:\windows\system32\bcdboot E:\windows /l de-DE
+    ```
 ## Restore simple data
 To restore a backup, just enter this in an administrator privileged console:
 ```

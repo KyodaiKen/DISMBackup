@@ -65,11 +65,11 @@ First you need to be booted up in an environment where you are able to format an
     ```
 3. After the restore has finished, you need to rebuild the boot environment of Windows like this:
     ```
-    <driveletter>\windows\system32\bcdboot <driveletter>\windows /l <language code like en-US or de-DE>
+    bootfix <driveletter> <language code like en-US or de-DE>
     ```
 Example:
     ```
-    E:\windows\system32\bcdboot E:\windows /l de-DE
+    bootfix E: en-US
     ```
 ## Restore simple data
 To restore a backup, just enter this in an administrator privileged console:

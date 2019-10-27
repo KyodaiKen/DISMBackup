@@ -68,11 +68,11 @@ Zuerst startet man von einem Bootmedium auf dem Windows läuft oder von dem orig
     ```
 3. Nachdem der Vorgang beendet wurde muss man noch die Startumgebung von Windows wieder aufbauen. Dies geschieht mit folgendem Befehl:
     ```
-    <Laufwerksbuchstabe>\windows\system32\bcdboot <Laufwerksbuchstabe>\windows /l <Sprachschlüssel wie zum Beispiel en-US or de-DE>
+    bootfix <Laufwerksbuchstabe> <Sprachschlüssel wie zum Beispiel en-US or de-DE>
     ```
     Beispiel:
     ```
-    E:\windows\system32\bcdboot E:\windows /l de-DE
+    bootfix E: de-DE
     ```
 ## Wiederherstellung einfacher Datensicherungen
 Wie vorhin bei der Erstellung eines Backups brauchen wir auch hier eine Eingabeaufforderung mit Administrator-Rechten und führt folgenden Befehl darin aus:

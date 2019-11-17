@@ -67,9 +67,9 @@ First you need to be booted up in an environment where you are able to format an
     ```
     bootfix <driveletter> <language code like en-US or de-DE>
     ```
-Example:
+    **Example:**
     ```
-    bootfix E: en-US
+    bootfix e: en-US
     ```
 ## Restore simple data
 To restore a backup, just enter this in an administrator privileged console:

@@ -43,7 +43,7 @@ backup-ns <path to backup> <destination path>
 ```
 backup-ns d:\git B:\Backup\git
 ```
-## Restore complete Windows drive and make it boot
+## Restore a complete Windows installation and make it boot
 ---
 **IMPORTANT NOTE: Disclaimer - This procedure is data destructive. By following along with this you do so at your own risk!**
 ---

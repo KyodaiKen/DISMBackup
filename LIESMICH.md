@@ -50,7 +50,7 @@ backup-ns d:\git B:\Backup\git
 
 **WICHTIG: Haftungsausschluss! - Diese Prozedur kann wichtige Daten zerstören, wenn nicht korrekt angewendet. Für etwaige Folgen übernehme ich keinerlei Haftung. Wer dieser Anleitung folgt, tut dies auf eigene Verantwortung!**
 
-Zuerst startet man von einem Bootmedium auf dem Windows läuft oder von dem originalen Windows-Installationsmedium, bei dem man eine Administrator-Eingabeaufforderung mit UMSCHALT+F10 öffnen kann.
+Zuerst startet man von einem Bootmedium auf dem Windows läuft oder von dem originalen Windows-Installationsmedium, bei dem man eine Administrator-Eingabeaufforderung mit UMSCHALT+F10 öffnen kann. Bitte darauf achten, dass man im x:\sources Verzeichnis bleibt und die Skripte dann mit dem Laufwerksbuchstaben und Pfad eintippen muss!
 
 1. Die Zielpartition mit folgendem Befehl formatieren:
     ```
@@ -64,7 +64,7 @@ Zuerst startet man von einem Bootmedium auf dem Windows läuft oder von dem orig
     ```
     **Beispiel:**
     ```
-    restore_backup B:\Backups\MyBackup\1234567890.WIM E:\
+    d:\restore_backup B:\Backups\MyBackup\1234567890.WIM E:\
     ```
 3. Nachdem der Vorgang beendet wurde muss man noch die Startumgebung von Windows wieder aufbauen. Dies geschieht mit folgendem Befehl:
     ```
@@ -72,7 +72,7 @@ Zuerst startet man von einem Bootmedium auf dem Windows läuft oder von dem orig
     ```
     Beispiel:
     ```
-    bootfix E: de-DE
+    d:\bootfix E: de-DE
     ```
 ## Wiederherstellung einfacher Datensicherungen
 Wie vorhin bei der Erstellung eines Backups brauchen wir auch hier eine Eingabeaufforderung mit Administrator-Rechten und führt folgenden Befehl darin aus:

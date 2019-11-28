@@ -51,8 +51,7 @@ backup-ns d:\git B:\Backup\git
 
 > **WICHTIG: Haftungsausschluss! - Diese Prozedur kann wichtige Daten zerstören, wenn nicht korrekt angewendet. Für etwaige Folgen übernehme ich keinerlei Haftung. Wer dieser Anleitung folgt, tut dies auf eigene Verantwortung!**
 
-Zuerst startet man von einem Bootmedium auf dem Windows läuft oder von dem originalen Windows-Installationsmedium, bei dem man eine Administrator-Eingabeaufforderung mit UMSCHALT+F10 öffnen kann. Bitte darauf achten, dass man im x:\sources Verzeichnis bleibt und die Skripte dann mit dem Laufwerksbuchstaben und Pfad eintippen muss!
-
+Zuerst startet man von einem Bootmedium auf dem Windows läuft oder von dem originalen Windows-Installationsmedium, bei dem man eine Administrator-Eingabeaufforderung mit UMSCHALT+F10 öffnen kann.
 1. Die Zielpartition mit folgendem Befehl formatieren:
     ```
     format <Laufwerksbuchstabe> /FS:NTFS /q /Y

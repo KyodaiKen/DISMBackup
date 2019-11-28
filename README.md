@@ -48,7 +48,7 @@ backup-ns d:\git B:\Backup\git
 
 > **IMPORTANT NOTE: Disclaimer - This procedure is data destructive. By following along with this you do so at your own risk!**
 
-First you need to be booted up in an environment where you are able to format and repopulate the drive where you want to restore your Windows. This could be the Windows Setup (SHIFT+F10 opens the admin console) or another Windows that is booted up. Make sure you stay in the x:\sources directory! To run the scripts, you have to enter the path to the scripts each time you run them.
+First you need to be booted up in an environment where you are able to format and repopulate the drive where you want to restore your Windows. This could be the Windows Setup (SHIFT+F10 opens the admin console) or another Windows that is booted up.
 
 1. Format the destination partition using the format statement:
     ```

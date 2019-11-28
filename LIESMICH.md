@@ -14,6 +14,7 @@ Die Abbilder werden in Microsoft's eigenen WIM-Format abgespeichert. Sie sind ko
     * [Backup einer einfachen Partition oder eines Verzeichnisses](<#Backup-einer-einfachen-Partition-oder-eines-Verzeichnisses>)
     * [Eine komplette Windows-Sicherheitskopie wiederherstellen und wieder bootfähig machen](<#Eine-komplette-Windows-Sicherheitskopie-wiederherstellen-und-wieder-bootfähig-machen>)
     * [Wiederherstellung einfacher Datensicherungen](<#Wiederherstellung-einfacher-Datensicherungen>)
+    * [Optionale Parameter](#optionale-parameter)
 
 # Installation
 1. Man wählt sich ein beliebiges Installationsverzeichnis aus und kopiert die drei Scriptdateien in dieses.
@@ -48,7 +49,7 @@ backup-ns d:\git B:\Backup\git
 ```
 ## Eine komplette Windows-Sicherheitskopie wiederherstellen und wieder bootfähig machen
 
-**WICHTIG: Haftungsausschluss! - Diese Prozedur kann wichtige Daten zerstören, wenn nicht korrekt angewendet. Für etwaige Folgen übernehme ich keinerlei Haftung. Wer dieser Anleitung folgt, tut dies auf eigene Verantwortung!**
+> **WICHTIG: Haftungsausschluss! - Diese Prozedur kann wichtige Daten zerstören, wenn nicht korrekt angewendet. Für etwaige Folgen übernehme ich keinerlei Haftung. Wer dieser Anleitung folgt, tut dies auf eigene Verantwortung!**
 
 Zuerst startet man von einem Bootmedium auf dem Windows läuft oder von dem originalen Windows-Installationsmedium, bei dem man eine Administrator-Eingabeaufforderung mit UMSCHALT+F10 öffnen kann. Bitte darauf achten, dass man im x:\sources Verzeichnis bleibt und die Skripte dann mit dem Laufwerksbuchstaben und Pfad eintippen muss!
 
@@ -56,7 +57,7 @@ Zuerst startet man von einem Bootmedium auf dem Windows läuft oder von dem orig
     ```
     format <Laufwerksbuchstabe> /FS:NTFS /q /Y
     ```
-    **/!\ ACHTUNG - DIES LÖSCHT ALLE DATEN VON DER PARTITION! /!\\**
+    > **/!\ ACHTUNG - DIES LÖSCHT ALLE DATEN VON DER PARTITION! /!\\**
 
 2. Mit folgendem Befehl wird die Wiederherstellung gestartet:
     ```
@@ -84,3 +85,15 @@ restore_backup <Pfad mit Dateiname des Sicherungsabbildes> <Pfad in dem die Date
 restore_backup B:\Backups\MyBackup\1234567890.WIM D:\OldFiles
 ```
 Anmerkung: Dies ist wie das Entpacken eines Archives. Falls alte Daten gelöscht werden sollen, muss man dies vorher selbst tun. Entweder durch Formatieren oder Löschen/Leeren des Zielordners.
+
+## Optionale Parameter
+Jedem Skript (bis auf `bootfix`) kann ein dritter Parameter angehängt werden, um das *Scratch Directory* von DISM anzugeben. Dieses Verzeichnis wird dazu genutzt um temporäre Dateien während der Verarbeitung abzulegen.
+
+Beispiele:
+> `t:\temp` ist in disen Beispielen der *Scratch Directory*-Parameter.
+
+```
+backup x: b:\backup\x t:\temp
+backup-ns x:\ b:\backup\x t:\temp
+restore_backup b:\backup\x x:\ t:\temp
+```

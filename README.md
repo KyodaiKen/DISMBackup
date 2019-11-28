@@ -14,6 +14,7 @@ The file format of the images is Microsoft's WIM-Format, which can be opened usi
     * [Backup a simple partition or directory](#backup-a-simple-partition-or-directory)
     * [Restore complete Windows drive and make it boot](#restore-complete-windows-drive-and-make-it-boot)
     * [Restore simple data](#restore-simple-data)
+    * [Optional parameters](#optional-parameters)
 
 # Installation
 1. You choose any directory on your PC or boot media and place the scripts there. Then you go ahead and download [Microsoft Windows Volume Shadow Copy Service SDK](https://www.microsoft.com/en-us/download/details.aspx?id=23490). It is not that big, don't worry.
@@ -44,16 +45,16 @@ backup-ns <path to backup> <destination path>
 backup-ns d:\git B:\Backup\git
 ```
 ## Restore a complete Windows installation and make it boot
----
-**IMPORTANT NOTE: Disclaimer - This procedure is data destructive. By following along with this you do so at your own risk!**
----
+
+> **IMPORTANT NOTE: Disclaimer - This procedure is data destructive. By following along with this you do so at your own risk!**
+
 First you need to be booted up in an environment where you are able to format and repopulate the drive where you want to restore your Windows. This could be the Windows Setup (SHIFT+F10 opens the admin console) or another Windows that is booted up. Make sure you stay in the x:\sources directory! To run the scripts, you have to enter the path to the scripts each time you run them.
 
 1. Format the destination partition using the format statement:
     ```
     format <driveletter> /FS:NTFS /q /Y
     ```
-    **/!\ WARNING - THIS DELETES ALL DATA ON THAT PARTITION OF THE DRIVE /!\\**
+    > **/!\ WARNING - THIS DELETES ALL DATA ON THAT PARTITION OF THE DRIVE /!\\**
 
 2. Run the restore_data script with the following syntax:
     ```
@@ -81,3 +82,16 @@ Example
 restore_backup B:\Backups\MyBackup\1234567890.WIM D:\OldFiles
 ```
 Please note, it's like extracting an archive. You may want to clear your destination directory or format your destination drive.
+## Optional parameters
+### Scratch directory
+All scripts except of course the `bootfix` script support a third parameter to specify the DISM scratch directory. This is useful if you want to use a RAMDISK for it or a specific drive.
+
+In case you don't know what the scratch directory is: DISM uses a directory to store some temporary files while processing.
+
+Examples:
+> Where `t:\temp` is the scratch directory in the above examples.
+```
+backup x: b:\backup\x t:\temp
+backup-ns x:\ b:\backup\x t:\temp
+restore_backup b:\backup\x x:\ t:\temp
+```

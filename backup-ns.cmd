@@ -26,6 +26,7 @@ echo Please specify the destination path
 goto ende
 :stop2
 echo Please specify a drive letter as the source drive
+goto ende
 :stop3
 echo Could not find DISM anywhere. Please make sure you're in the right path.
 :ende

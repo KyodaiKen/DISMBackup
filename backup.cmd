@@ -11,7 +11,7 @@ set destdir=%2
 set scratchdir=%3
 if NOT DEFINED destdir goto stop1
 if NOT DEFINED sourcedrv goto stop2
-echo Detemining free drive letter for the volume shadow copy...
+echo Determining free drive letter for the volume shadow copy...
 for %%l in (P Q R S T U V W X Y Z D E F G H I J K L M N O) do (  
   set scd=%%l
   mountvol %%l: /L >nul

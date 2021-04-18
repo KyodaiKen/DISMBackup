@@ -15,9 +15,9 @@ IF NOT ERRORLEVEL 0 (
   ECHO You need administrative permissions to run this script.
   EXIT /B 1
 )
-IF NOT EXIST %dism% >NUL 2>&1 (
+IF NOT EXIST %dism% (
   set dism=dism.exe
-  IF NOT EXIST %dism% >NUL 2>&1 (
+  IF NOT EXIST %dism% (
     ECHO Could not find DISM anywhere.
     EXIT /B 2
   )
@@ -26,7 +26,7 @@ IF NOT DEFINED destdir (
   ECHO Please specify the destination path.
   EXIT /B 4
 )
-IF NOT EXIST "%destdir%" >NUL 2>&1 (
+IF NOT EXIST "%destdir%" (
   ECHO Destination path is not accessible.
   EXIT /B 5
 )
@@ -38,7 +38,7 @@ IF %sourcedir:~0,2%==\\ (
   ECHO Network paths are not allowed.
   EXIT /B 7
 )
-IF NOT EXIST %sourcedir% >NUL 2>&1 (
+IF NOT EXIST %sourcedir% (
   ECHO Source path is not accessible.
   EXIT /B 8
 )

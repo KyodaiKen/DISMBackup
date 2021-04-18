@@ -22,7 +22,8 @@ The file format of the images is Microsoft's WIM-Format, which can be opened usi
 3. After setup, you go to the directory `C:\Program Files (x86)\Microsoft\VSSSDK72\TestApps\vshadow\bin\obj-chk\amd64` and copy the file `vshadow.exe` into the same directory as the DISMBackup scripts.
 4. Optional: Add your DISMBackup directory to the PATH variable for easier access
 5. Optional: Uninstall the SDK from the Apps & Features control panel
-6. That's it. You've successfully installed the DISMBackup scripts!
+6. Optional: Add DISM.EXE as an exception to Windows Defender or other anti virus, it will speed it up a lot!
+7. That's it. You've successfully installed the DISMBackup scripts!
 
 # Usage
 ## Backing up your currently running Windows image

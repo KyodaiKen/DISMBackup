@@ -116,7 +116,7 @@ IF NOT ERRORLEVEL 0 (
 rem removing shadow copy when script ends or when an error ocurred
 %vshadow% -ds=%SHADOW_ID_1% >>%log%
 del "%destdir%\vshadowtemp.cmd" >nul 2>nul
-IF dellogonsuccess EQU 1 (
+IF %dellogonsuccess% EQU 1 (
   IF %myerr% EQU 0 del %log% >nul 2>nul
 )
 EXIT /B %myerr%

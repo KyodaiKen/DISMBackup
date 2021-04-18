@@ -29,7 +29,7 @@ Die Abbilder werden in Microsoft's eigenen WIM-Format abgespeichert. Sie sind ko
 Um loszulegen muss zunächst eine Eingabeaufforderung mit administrativen Rechten geöffnet werden.
 Wir geben fall folgendes ein:
 ```
-backup <Pfad zum Sichern> <Zielpfad>
+backup <Pfad zum Sichern OHNE \ am ENDE!> <Zielpfad>
 ```
 **Beispiel:**
 ```

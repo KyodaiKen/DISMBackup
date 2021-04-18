@@ -29,7 +29,7 @@ The file format of the images is Microsoft's WIM-Format, which can be opened usi
 ## Backing up your currently running Windows image
 To create a backup, just enter this in an administrator privileged console:
 ```
-backup <full path to backup> <destination path>
+backup <full path to backup WITHOUT BACKSLASH AT THE END> <destination path>
 ```
 **Example:**
 ```

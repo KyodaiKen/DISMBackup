@@ -47,6 +47,10 @@ IF %sourcedir:~0,2%==\\ (
   ECHO Network paths are not allowed.
   EXIT /B 7
 )
+IF %srcpathonly:~-1%==\ (
+  ECHO Path must not end with a backslash.
+  EXIT /B 12
+)
 IF NOT EXIST "%sourcedir%" >NUL 2>&1 (
   ECHO Source path is not accessible.
   EXIT /B 8

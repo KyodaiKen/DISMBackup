@@ -29,11 +29,11 @@ Die Abbilder werden in Microsoft's eigenen WIM-Format abgespeichert. Sie sind ko
 Um loszulegen muss zunächst eine Eingabeaufforderung mit administrativen Rechten geöffnet werden.
 Wir geben fall folgendes ein:
 ```
-backup <Laufwerksbuchstabe zum Sichern>: <Zielpfad>
+backup <Pfad zum Sichern> <Zielpfad>
 ```
 **Beispiel:**
 ```
-backup c: B:\Backup\MyBackup
+backup c:\ B:\Backup\MyBackup
 ```
 Dies erstell ein Sicherungsabbild mit einem eindeutigen Dateinamen, welcher aus dem aktuellen Datum und der Uhrzeit ohne Trennzeichen gebildet wird. Die Dateiendung lautet .WIM und diese Dateien können auch mit dem Datei-Archivierer [7-zip](https://www.7-zip.org/) wie ein ZIP-Archiv geöffnet werden.
 
@@ -41,7 +41,7 @@ Dies erstell ein Sicherungsabbild mit einem eindeutigen Dateinamen, welcher aus 
 Wie oben brauchen wir auch hier eine Eingabeaufforderung mit Administrator-Rechten.
 Eingegeben wird jedoch:
 ```
-backup-ns <Pfad oder Laufwerk zum Sichern> <Zielpfad>
+backup-ns <Pfad zum Sichern> <Zielpfad>
 ```
 **Beispiel:**
 ```

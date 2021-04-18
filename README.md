@@ -29,11 +29,11 @@ The file format of the images is Microsoft's WIM-Format, which can be opened usi
 ## Backing up your currently running Windows image
 To create a backup, just enter this in an administrator privileged console:
 ```
-backup <driveletter to backup>: <destination path>
+backup <full path to backup> <destination path>
 ```
 **Example:**
 ```
-backup c: B:\Backup\MyBackup
+backup c:\ B:\Backup\MyBackup
 ```
 This will create a backup with a unique file name in it. The file name is composited by the current date and time without spaces and extra characters. The backup file is a .WIM file which can be opened using the file archiver [7-zip](https://www.7-zip.org/)
 ## Backup a simple partition or directory
@@ -47,7 +47,7 @@ backup-ns d:\git B:\Backup\git
 ```
 ## Restore a complete Windows installation and make it boot
 
-> **IMPORTANT NOTE: Disclaimer - This procedure is data destructive. By following along with this you do so at your own risk!**
+> **IMPORTANT NOTE: Disclaimer - This procedure is potentially data destructive. By following along with this you do so at your own risk!**
 
 First you need to be booted up in an environment where you are able to format and repopulate the drive where you want to restore your Windows. This could be the Windows Setup (SHIFT+F10 opens the admin console) or another Windows that is booted up.
 

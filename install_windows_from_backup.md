@@ -56,7 +56,7 @@ Resulting disk layout:
 diskpart
 sel dis 0
 conv gpt
-cre par efi size 100
+cre par efi size 256
 form fs fat32 quick
 ass letter w
 cre par pri size 524288
@@ -73,6 +73,7 @@ bcdboot z:\windows /s w:
 ```
 
 This installs Windows from your image into a 512 GByte large OS partition.
+Leave out the `size 524288` part to use the full disk or modify the value in MByte.
 
 ## Partition size for OS
 

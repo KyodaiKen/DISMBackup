@@ -2,7 +2,8 @@
 ## Requirements
 1. Destination drive must be clean (new, or cleaned using diskpart clean command or wiped using DBAN, etc.)
 2. You are in the Windows setup command input (cmd.eve SHIFT+F10 to open it).
-3. Navigate to your DISM toolchain script path using `cd /d path`
+3. Navigate to your DISM toolchain script path using `cd /d path`.
+4. Use Diskpart `list disk` command to determine the disk you want to use.
 
 ## Running the script
 ### Fill disk with Windows OS

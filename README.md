@@ -1,4 +1,4 @@
-**[Deutsch](LIESMICH.md)**
+**[Deutsch](LIESMICH.md) (Veraltet!)**
 
 # Introduction to DISMBackup
 This is a tool for creating backups using (almost) only Windows board tools. It makes it easier to create and restore backups with simple commands. It is written in the regular Windows batch script language, which makes it possible to also use those in the Windows PE (pre environment) such as the Windows Setup or Windows boot media.
@@ -49,7 +49,10 @@ backup-ns d:\git B:\Backup\git
 > It's very similar to the `backup.cmd` script, though it doesn't use the shadow copy service. It runs DISM right away. Useful for when you want to backup an offline system.
 
 ## Restore a complete Windows installation and make it boot
+### Using a script
+See [Miscellaneous tools](#miscellaneous-tools) under the "install.cmd" section.
 
+### Manual way
 See [Install Windows from WIM Backup using the restore_win scripts](install_windows_from_backup.md)
 
 ## Restore simple data
@@ -105,15 +108,15 @@ Example:
 bootfix e: en-GB
 ```
 
-## win_autoinst.cmd
-Install Windows and skip the setup wizard.
+## install.cmd
+Install Windows and skip the setup wizard. By default, this script only runs in the Windows Setup Pre-Environment (PE). To disable this security feature, comment out the line starting with `IF %computername% NEQ MINWINPC`.
+
+| :point_up:    | This will NOT skip OOBE, nor does it skip the online login with an MS account! |
+|---------------|:-------------------------|
 
 It partitions the disk and then extracts Windows from the install image (ESD or WIM), creates the boot environment and then reboots. Then you will be greeted with the OOBE.
 
 This is useful if you want to make sure the boot files and Windows are installed onto the correct disk drive as well as forcing it to not use unnecessary partitions on said drive.
-
-| :point_up:    | This will NOT skip OOBE, nor does it skip the online login with an MS account! |
-|---------------|:-------------------------|
 
 | :bulb:        | You can also use this script to restore a Windows backup image quickly. It does not have to be a setup image! |
 |---------------|:------------------------|

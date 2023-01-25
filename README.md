@@ -144,10 +144,10 @@ It does the following in the following order:
 
 ### Usage
 ```cmd
-win_autoinst <disk index from diskpart to partition> <Windows partition size in MB (optional)> <path to install.esd / wim> [--skip-ooobe]
+install <disk index from diskpart to partition> <Windows partition size in MB (optional)> <path to install.esd / wim> [--skip-ooobe]
 ```
 
 ```cmd
-win_autoinst 0 524288 f:\sources\install.wim --skip-oobe
+install 0 524288 f:\sources\install.wim --skip-oobe
 ```
 This will install Windows on disk 0, by creating a 512GB Windows partition

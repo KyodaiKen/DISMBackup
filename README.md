@@ -34,9 +34,9 @@ backup <full path to backup WITHOUT BACKSLASH AT THE END> <destination path>
 ```
 **Example:**
 ```
-backup c:\ B:\Backup\MyBackup
+backup c: B:\Backup\MyBackup
 ```
-This will create a backup with a unique file name in it. The file name is composited by the current date and time without spaces and extra characters. The backup file is a .WIM file which can be opened using the file archiver [7-zip](https://www.7-zip.org/)
+This will create a backup with a unique file name in it. The file name is composited by the current date and time without spaces and extra characters. The backup file is a .WIM file which can be opened using the file archiver [7-zip](https://www.7-zip.org/) - It can even be opened on Linux!
 ## Backing up without a shadow copy
 To create a backup, just enter this in an administrator privileged console:
 ```
@@ -115,6 +115,9 @@ This is useful if you want to make sure the boot files and Windows are installed
 | :point_up:    | This will NOT skip OOBE, nor does it skip the online login with an MS account! |
 |---------------|:-------------------------|
 
+| :bulb:        | You can also use this script to restore a Windows backup image quickly. It does not have to be a setup image! |
+|---------------|:------------------------|
+
 It does the following in the following order:
 
 | :memo:        | Disk refers to the storage hardware part (SSD, HDD) |
@@ -128,9 +131,9 @@ It does the following in the following order:
 6. Creates the boot environment
 7. AUTOMATICALLY reboots into OOBE
 
-| :boom: DANGER              |
+| :exclamation: WARNING      |
 |:---------------------------|
-| :exclamation:  Use at your own risk! This script partitions a disk automatically and does NOT validate inputs!  |
+| Use at your own risk! This script partitions a disk automatically and does NOT validate inputs!  |
 
 ### Usage
 ```cmd

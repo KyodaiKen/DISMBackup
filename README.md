@@ -15,6 +15,7 @@ The file format of the images is Microsoft's WIM-Format, which can be opened usi
     * [Restore complete Windows drive and make it boot](#restore-complete-windows-drive-and-make-it-boot)
     * [Restore simple data](#restore-simple-data)
     * [Optional parameters](#optional-parameters)
+* [Miscellaneous tools](#miscellaneous-tools)
 
 # Installation
 1. You choose any directory on your PC or boot media and place the scripts there. Then you go ahead and download [Microsoft Windows Volume Shadow Copy Service SDK](https://www.microsoft.com/en-us/download/details.aspx?id=23490). It is not that big, don't worry.
@@ -36,7 +37,7 @@ backup <full path to backup WITHOUT BACKSLASH AT THE END> <destination path>
 backup c:\ B:\Backup\MyBackup
 ```
 This will create a backup with a unique file name in it. The file name is composited by the current date and time without spaces and extra characters. The backup file is a .WIM file which can be opened using the file archiver [7-zip](https://www.7-zip.org/)
-## Backup a simple partition or directory
+## Backing up without a shadow copy
 To create a backup, just enter this in an administrator privileged console:
 ```
 backup-ns <path to backup> <destination path>
@@ -45,30 +46,97 @@ backup-ns <path to backup> <destination path>
 ```
 backup-ns d:\git B:\Backup\git
 ```
+> It's very similar to the `backup.cmd` script, though it doesn't use the shadow copy service. It runs DISM right away. Useful for when you want to backup an offline system.
+
 ## Restore a complete Windows installation and make it boot
 
 See [Install Windows from WIM Backup using the restore_win scripts](install_windows_from_backup.md)
 
 ## Restore simple data
 To restore a backup, just enter this in an administrator privileged console:
-```
+```cmd
 restore_backup <image file path and name> <path where the image file is restored>
 ```
 Example
-```
+```cmd
 restore_backup B:\Backups\MyBackup\1234567890.WIM D:\OldFiles
 ```
 Please note, it's like extracting an archive. You may want to clear your destination directory or format your destination drive.
 ## Optional parameters
 ### Scratch directory
-All scripts except of course the `bootfix` script support a third parameter to specify the DISM scratch directory. This is useful if you want to use a RAMDISK for it or a specific drive.
+`backup.cmd` and the restore scripts support a third parameter to specify the DISM scratch directory. This is useful if you want to use a RAMDISK for it or a specific drive.
 
 In case you don't know what the scratch directory is: DISM uses a directory to store some temporary files while processing.
 
 Examples:
 > Where `t:\temp` is the scratch directory in the above examples.
-```
+```cmd
 backup x: b:\backup\x t:\temp
 backup-ns x:\ b:\backup\x t:\temp
 restore_backup b:\backup\x x:\ t:\temp
+```
+
+# Miscellaneous tools
+## backup-ff.cmd
+Backs up only your Firefox profiles while Firefox instances are running.
+### Usage
+```cmd
+backup-ff <destination path>
+```
+Example:
+```cmd
+backup-ff d:\destination
+```
+
+> You can customize the script to perform this for other browsers. Keep in mind, that due to security restrictions, Chromium based browsers will refuse to load extensions from your profile. You can switch Firefox to avoid shenanigans like this.
+
+## bootfix.cmd
+Handy tool to recreate the boot environment for Windows. You can copy it onto your Windows installation media and use it from the SHIFT+F10 console.
+
+> It makes it a little bit easier to run the `bcdboot`command.
+
+### Usage
+> Determine the correct drive letter of your Windows installation
+```cmd
+bootfix <drive letter with colon> <language code (optional, default is en-US)> 
+```
+Example:
+```cmd
+bootfix e: en-GB
+```
+
+## win_autoinst.cmd
+Install Windows and skip the setup wizard.
+
+It partitions the disk and then extracts Windows from the install image (ESD or WIM), creates the boot environment and then reboots. Then you will be greeted with the OOBE.
+
+This is useful if you want to make sure the boot files and Windows are installed onto the correct disk drive as well as forcing it to not use unnecessary partitions on said drive.
+
+| :point_up:    | This will NOT skip OOBE, nor does it skip the online login with an MS account! |
+|---------------|:-------------------------|
+
+It does the following in the following order:
+
+| :memo:        | Disk refers to the storage hardware part (SSD, HDD) |
+|---------------|:------------------------|
+
+1. Makes sure the disk (1st parameter) is GPT
+2. Creates the EFI partition with 512 MByte size
+3. Adds a Windows partition of the given size or that fills the rest of the disk (2nd parameter)
+4. Quick-Formats the Windows partition as NTFS
+5. Restores the install image onto said partition
+6. Creates the boot environment
+7. AUTOMATICALLY reboots into OOBE
+
+| :boom: DANGER              |
+|:---------------------------|
+| :exclamation:  Use at your own risk! This script partitions a disk automatically and does NOT validate inputs!  |
+
+### Usage
+```cmd
+win_autoinst <disk index from diskpart to partition> <Windows partition size in MB (optional)> <path to install.esd / wim>
+```
+
+```cmd
+win_autoinst 0 524288 e:\sources\install.wim
 ```

@@ -24,6 +24,16 @@ echo --^> Installing Windows from install image %3
 dism /apply-image /imagefile:%3 /index:1 /applydir:z:\
 echo --^> Installing boot environment
 bcdboot z:\windows /s w:
+
+rem Skip OOBE (EXPERIMENTAL!)
+IF /i %4 EQU --skip-oobe (
+    echo --^> Modifying the extracted image to enable unattended mode to skip OOBE
+    echo - Creating "Panther" directory under z:\Windows
+    mkdir z:\Windows\Panther
+    echo - Copying the answer file into the previously created Panther directory
+    copy %~dp0\skip_oobe.xml z:\Windows\Panther\unattend.xml
+)
+
 echo Before we reboot, check the backlog for errors and
 pause
 echo --^> Rebooting

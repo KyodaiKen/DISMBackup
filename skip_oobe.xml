@@ -1,0 +1,61 @@
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+    <settings pass="oobeSystem">
+        <component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <InputLocale>0407:00000407</InputLocale>
+            <SystemLocale>EN-US</SystemLocale>
+            <UILanguage>EN-US</UILanguage>
+            <UILanguageFallback>EN-US</UILanguageFallback>
+            <UserLocale>EN-US</UserLocale>
+        </component>
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <OOBE>
+                <VMModeOptimizations>
+                    <SkipAdministratorProfileRemoval>false</SkipAdministratorProfileRemoval>
+                </VMModeOptimizations>
+                <HideEULAPage>true</HideEULAPage>
+                <HideLocalAccountScreen>true</HideLocalAccountScreen>
+                <HideOnlineAccountScreens>true</HideOnlineAccountScreens>
+                <HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
+                <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
+                <ProtectYourPC>2</ProtectYourPC>
+                <UnattendEnableRetailDemo>false</UnattendEnableRetailDemo>
+            </OOBE>
+            <UserAccounts>
+                <LocalAccounts>
+                    <LocalAccount wcm:action="add">
+                        <Description>Owner, local admin</Description>
+                        <DisplayName>Kyoudai Ken</DisplayName>
+                        <Group>Administrators</Group>
+                        <Name>Kyo</Name>
+                    </LocalAccount>
+                </LocalAccounts>
+            </UserAccounts>
+            <RegisteredOrganization>Kyoudai Ken</RegisteredOrganization>
+            <RegisteredOwner>Kyo</RegisteredOwner>
+            <TimeZone>W. Europe Standard Time</TimeZone>
+         </component>
+    </settings>
+    <settings pass="specialize">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <OEMInformation>
+                <Manufacturer>Kyoudai Ken</Manufacturer>
+                <Model>FELINE MK IV</Model>
+                <SupportHours>24/7</SupportHours>
+                <SupportPhone>+44 123 4567 8910</SupportPhone>
+                <SupportProvider>Kyoudai Ken</SupportProvider>
+                <SupportURL>https://example.com</SupportURL>
+            </OEMInformation>
+            <ComputerName>*</ComputerName>
+            <OEMName>Kyoudai Ken</OEMName>
+            <RegisteredOrganization>Kyoudai Ken</RegisteredOrganization>
+            <RegisteredOwner>Kyo</RegisteredOwner>
+            <TimeZone>W. Europe Standard time</TimeZone>
+            <Themes>
+                <UWPAppsUseLightTheme>false</UWPAppsUseLightTheme>
+            </Themes>
+        </component>
+    </settings>
+</unattend>

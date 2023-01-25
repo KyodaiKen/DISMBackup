@@ -114,7 +114,7 @@ bootfix e: en-GB
 ## install.cmd
 Install Windows and skip the setup wizard. By default, this script only runs in the Windows Setup Pre-Environment (PE). To disable this security feature, comment out the line starting with `IF %computername% NEQ MINWINPC`.
 
-| :point_up:    | This will NOT skip OOBE, nor does it skip the online login with an MS account! |
+| :point_up:    | In the DEFAULT setting, this will NOT skip OOBE, nor does it skip the online login with an MS account! You can enable it by placing `--skip-oobe` at the END of the command-line. See below. |
 |---------------|:-------------------------|
 
 It partitions the disk and then extracts Windows from the install image (ESD or WIM), creates the boot environment and then reboots. Then you will be greeted with the OOBE.
@@ -135,7 +135,8 @@ It does the following in the following order:
 4. Quick-Formats the Windows partition as NTFS
 5. Restores the install image onto said partition
 6. Creates the boot environment
-7. AUTOMATICALLY reboots into OOBE
+7. [EXPERIMENTAL] If option `--skip-oobe` is passedto the END of the command line, the `skip_oobe.xml` file (has to be in the same directory as the script) is used as an answer file to skip OOBE. You can edit an modify this file. The sample file was created using an example at https://www.tenforums.com/tutorials/131765-apply-unattended-answer-file-windows-10-install-media.html
+8. Reboots into OOBE after a prompt
 
 | :exclamation: WARNING      |
 |:---------------------------|
@@ -143,9 +144,10 @@ It does the following in the following order:
 
 ### Usage
 ```cmd
-win_autoinst <disk index from diskpart to partition> <Windows partition size in MB (optional)> <path to install.esd / wim>
+win_autoinst <disk index from diskpart to partition> <Windows partition size in MB (optional)> <path to install.esd / wim> [--skip-ooobe]
 ```
 
 ```cmd
-win_autoinst 0 524288 e:\sources\install.wim
+win_autoinst 0 524288 f:\sources\install.wim --skip-oobe
 ```
+This will install Windows on disk 0, by creating a 512GB Windows partition

@@ -150,4 +150,8 @@ install <disk index from diskpart to partition> <Windows partition size in MB (o
 ```cmd
 install 0 524288 f:\sources\install.wim --skip-oobe
 ```
-This will install Windows on disk 0, by creating a 512GB Windows partition
+This will install Windows on disk 0, by creating a 512GB Windows partition and uses the `skip_oobe.xml` file to skip the pesky OOBE.
+
+| :exclamation: PRIVACY WARNING |
+|:------------------------------|
+| Since **Windows 11 22H2** it looks like disabling the privacy settings in the XML does not take effect anymore! You have to disable them in the settings after installation.  |

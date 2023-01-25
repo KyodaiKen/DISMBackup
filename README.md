@@ -117,26 +117,27 @@ Install Windows and skip the setup wizard. By default, this script only runs in 
 | :point_up:    | In the DEFAULT setting, this will NOT skip OOBE, nor does it skip the online login with an MS account! You can enable it by placing `--skip-oobe` at the END of the command-line. See below. |
 |---------------|:-------------------------|
 
-It partitions the disk and then extracts Windows from the install image (ESD or WIM), creates the boot environment and then reboots. Then you will be greeted with the OOBE.
+It partitions the disk and then extracts Windows from the install image (ESD or WIM), creates the boot environment and then reboots. Then you will be greeted by the OOBE.
 
 This is useful if you want to make sure the boot files and Windows are installed onto the correct disk drive as well as forcing it to not use unnecessary partitions on said drive.
 
 | :bulb:        | You can also use this script to restore a Windows backup image quickly. It does not have to be a setup image! |
 |---------------|:------------------------|
 
-It does the following in the following order:
+What it does:
 
 | :memo:        | Disk refers to the storage hardware part (SSD, HDD) |
 |---------------|:------------------------|
 
-1. Makes sure the disk (1st parameter) is GPT
-2. Creates the EFI partition with 512 MByte size
-3. Adds a Windows partition of the given size or that fills the rest of the disk (2nd parameter)
-4. Quick-Formats the Windows partition as NTFS
-5. Restores the install image onto said partition
-6. Creates the boot environment
-7. [EXPERIMENTAL] If option `--skip-oobe` is passedto the END of the command line, the `skip_oobe.xml` file (has to be in the same directory as the script) is used as an answer file to skip OOBE. You can edit an modify this file. The sample file was created using an example at https://www.tenforums.com/tutorials/131765-apply-unattended-answer-file-windows-10-install-media.html
-8. Reboots into OOBE after a prompt
+1. Shows how your parameters affect the installation before proceeding
+2. Makes sure the disk (1st parameter) is GPT
+3. Creates the EFI partition with 512 MByte size
+4. Adds a Windows partition of the given size or that fills the rest of the disk (2nd parameter)
+5. Quick-Formats the Windows partition as NTFS
+6. Restores the install image onto said partition
+7. Creates the boot environment
+8. [EXPERIMENTAL] If option `--skip-oobe` is passed to the END of the command line, the `skip_oobe.xml` file (has to be in the same directory as the script) is used as an answer file to skip OOBE. You can edit an modify this file. The sample file was created using an example at https://www.tenforums.com/tutorials/131765-apply-unattended-answer-file-windows-10-install-media.html
+9. Reboots into OOBE after a prompt
 
 | :exclamation: WARNING      |
 |:---------------------------|

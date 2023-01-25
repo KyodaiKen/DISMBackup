@@ -10,6 +10,8 @@ IF %wsize% EQU 0 (
     set strsize=size is %2 MB
 )
 echo --^> Partitioning and formatting disk %1, Win partition %strsize%
+IF /i %4 EQU --skip-oobe echo --^> Will use skip_oobe.xml to skip OOBE after installation
+echo You can cancel this operation using CTRL+C, then confirming with y, or you can
 pause
 (echo sel dis %1
 echo conv gpt
@@ -34,7 +36,7 @@ IF /i %4 EQU --skip-oobe (
     copy %~dp0\skip_oobe.xml z:\Windows\Panther\unattend.xml
 )
 
-echo Before we reboot, check the backlog for errors and
+echo Before we reboot, check the backlog for errors, then either cancel the reboot using CTRL+C or
 pause
 echo --^> Rebooting
 wpeutil reboot

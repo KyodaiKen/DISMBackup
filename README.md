@@ -16,6 +16,9 @@ The file format of the images is Microsoft's WIM-Format, which can be opened usi
     * [Restore simple data](#restore-simple-data)
     * [Optional parameters](#optional-parameters)
 * [Miscellaneous tools](#miscellaneous-tools)
+    * [backup-ff.cmd](#backup-ffcmd)
+    * [bootfix.cmd](#bootfixcmd)
+    * [install.cmd](#installcmd)
 
 # Installation
 1. You choose any directory on your PC or boot media and place the scripts there. Then you go ahead and download [Microsoft Windows Volume Shadow Copy Service SDK](https://www.microsoft.com/en-us/download/details.aspx?id=23490). It is not that big, don't worry.
@@ -50,7 +53,7 @@ backup-ns d:\git B:\Backup\git
 
 ## Restore a complete Windows installation and make it boot
 ### Using a script
-See [Miscellaneous tools](#miscellaneous-tools) under the "install.cmd" section.
+See [install.cmd](#installcmd)
 
 ### Manual way
 See [Install Windows from WIM Backup using the restore_win scripts](install_windows_from_backup.md)

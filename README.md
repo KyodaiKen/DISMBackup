@@ -144,7 +144,7 @@ It does the following in the following order:
 
 ### Usage
 ```cmd
-install <disk index from diskpart to partition> <Windows partition size in MB (optional)> <path to install.esd / wim> [--skip-ooobe]
+install <disk index from diskpart to partition> <Windows partition size in MB (0 = full disk)> <path to install.esd / wim> [--skip-ooobe]
 ```
 
 ```cmd
@@ -154,4 +154,4 @@ This will install Windows on disk 0, by creating a 512GB Windows partition and u
 
 | :exclamation: PRIVACY WARNING |
 |:------------------------------|
-| Since **Windows 11 22H2** it looks like disabling the privacy settings in the XML does not take effect anymore! You have to disable them in the settings after installation.  |
+| Since **Windows 11 22H2** it looks like disabling the privacy setting in the XML does not take effect anymore! You have to disable them in the settings after installation.  |

@@ -112,47 +112,4 @@ bootfix e: en-GB
 ```
 
 ## install.cmd
-Install Windows and skip the setup wizard. By default, this script only runs in the Windows Setup Pre-Environment (PE). To disable this security feature, comment out the line starting with `IF %computername% NEQ MINWINPC`.
-
-| :point_up:    | In the DEFAULT setting, this will NOT skip OOBE, nor does it skip the online login with an MS account! You can enable it by placing `--skip-oobe` at the END of the command-line. See below. |
-|---------------|:-------------------------|
-
-It partitions the disk and then extracts Windows from the install image (ESD or WIM), creates the boot environment and then reboots. Then you will be greeted by the OOBE.
-
-This is useful if you want to make sure the boot files and Windows are installed onto the correct disk drive as well as forcing it to not use unnecessary partitions on said drive.
-
-| :bulb:        | You can also use this script to restore a Windows backup image quickly. It does not have to be a setup image! |
-|---------------|:------------------------|
-
-What it does:
-
-| :memo:        | Disk refers to the storage hardware part (SSD, HDD) |
-|---------------|:------------------------|
-
-1. Shows how your parameters affect the installation before proceeding
-2. Makes sure the disk (1st parameter) is GPT
-3. Creates the EFI partition with 512 MByte size
-4. Adds a Windows partition of the given size or that fills the rest of the disk (2nd parameter)
-5. Quick-Formats the Windows partition as NTFS
-6. Restores the install image onto said partition
-7. Creates the boot environment
-8. [EXPERIMENTAL] If option `--skip-oobe` is passed to the END of the command line, the `skip_oobe.xml` file (has to be in the same directory as the script) is used as an answer file to skip OOBE. You can edit an modify this file. The sample file was created using an example at https://www.tenforums.com/tutorials/131765-apply-unattended-answer-file-windows-10-install-media.html
-9. Reboots into OOBE after a prompt
-
-| :exclamation: WARNING      |
-|:---------------------------|
-| Use at your own risk! This script partitions a disk automatically and does NOT validate inputs!  |
-
-### Usage
-```cmd
-install <disk index from diskpart to partition> <Windows partition size in MB (0 = full disk)> <path to install.esd / wim> [--skip-ooobe]
-```
-
-```cmd
-install 0 524288 f:\sources\install.wim --skip-oobe
-```
-This will install Windows on disk 0, by creating a 512GB Windows partition and uses the `skip_oobe.xml` file to skip the pesky OOBE.
-
-| :exclamation: PRIVACY WARNING |
-|:------------------------------|
-| Since **Windows 11 22H2** it looks like disabling the privacy setting in the XML does not take effect anymore! You have to disable them in the settings after installation.  |
+This script has been moved to its own reprository [https://github.com/KyodaiKen/Install11](https://github.com/KyodaiKen/Install11).
